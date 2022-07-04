@@ -24,4 +24,6 @@ WORKDIR $PROJECT_ROOT
 
 RUN pip install -r requirements.txt
 
+RUN [ "python", "-c", "import nltk; nltk.download('punkt', download_dir='/usr/nltk_data')" ]
+
 CMD python lib/run.py
