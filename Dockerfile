@@ -24,6 +24,8 @@ WORKDIR $PROJECT_ROOT
 
 RUN pip install -r requirements.txt
 
+ADD https://github.com/EvgenKuznet/Avito/blob/main/lib/descr_vectorizer.pkl?raw=true $PROJECT_ROOT/lib/
+
 RUN [ "python", "-c", "import nltk; nltk.download('punkt', download_dir='/usr/nltk_data')" ]
 
 CMD python lib/run.py
